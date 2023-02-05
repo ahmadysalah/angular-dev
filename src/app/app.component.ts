@@ -23,12 +23,16 @@ export class AppComponent {
 
   apiData = []
 
-
+  inputValue = '';
   loading = false;
   constructor() {
     this.get_data();
   }
 
+
+  handleChangeValue = (value: string) => {
+    this.inputValue = value;
+  }
 
   async get_data() {
     this.loading = true;

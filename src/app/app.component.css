@@ -8,3 +8,9 @@
   height: 20rem;
   width: 20rem;
 }
+
+.form-group {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 25rem
+}

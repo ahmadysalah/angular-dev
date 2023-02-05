@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label for="exampleInputEmail1" class="mb-2">{{ label }}</label>
+  <input
+    type="{{ type }}"
+    class="form-control"
+    placeholder="{{ placeholder }}"
+    [value]="value"
+    (input)="onValueChange($event)"
+    [required]="required"
+  />
+</div>

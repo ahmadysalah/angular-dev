@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 20rem;
+    width: 20rem;
+}
+
+.form-group {
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 70%;
+}

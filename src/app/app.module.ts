@@ -12,6 +12,7 @@ import { ToDoTableComponent } from './components/to-do-table/to-do-table.compone
 import { StoreModule } from '@ngrx/store';
 import { TasksReducers } from './store/reducers';
 import { TodoServiceService } from './store/actions';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TodoServiceService } from './store/actions';
     TextInputComponent,
     AddToDoFormComponent,
     ToDoTableComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

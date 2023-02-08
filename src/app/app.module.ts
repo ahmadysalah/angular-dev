@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { ApiServiceService } from './utils/api-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,8 +25,9 @@ import { TodoServiceService } from './store/actions';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      tasks: TasksReducers as T,
+      tasks: TasksReducers,
     }),
+    // FormsModule,
   ],
   bootstrap: [AppComponent],
   providers: [TodoServiceService, ApiServiceService],

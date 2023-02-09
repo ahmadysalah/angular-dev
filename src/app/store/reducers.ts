@@ -9,6 +9,7 @@ const initialState: TASK_STATE = {
       completed: false,
     },
   ],
+  task: {},
 };
 
 export function TasksReducers(
@@ -40,6 +41,16 @@ export function TasksReducers(
         tasks: state.tasks.filter((task) => task.id !== action.payload),
       };
 
+    case TASK_ACTION.GET_SINGLE_TASK: {
+      console.log({
+        id: action.payload,
+        found: state.tasks?.find((task) => task.id === +action.payload),
+      });
+      return {
+        ...state,
+        task: state.tasks?.find((task) => task.id === +action.payload),
+      };
+    }
     default:
       return state;
   }

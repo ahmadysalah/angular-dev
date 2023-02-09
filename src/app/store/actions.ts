@@ -8,6 +8,7 @@ export const TASK_ACTION = {
   ADD_TASK: 'ADD_TASK',
   DELETE_TASK: 'DELETE_TASK',
   SET_LOADING: 'SET_LOADING',
+  GET_SINGLE_TASK: 'GET_SINGLE_TASK',
 };
 
 export const getAll = createAction(TASK_ACTION.GET_TASKS, (response) => ({
@@ -19,11 +20,12 @@ export const deleteTask = createAction(TASK_ACTION.DELETE_TASK, (id) => ({
   payload: id,
 }));
 
-type Keys = keyof typeof TASK_ACTION;
-
-export type TASK_ACTION = (typeof TASK_ACTION)[Keys];
-
-export type TASK_ACTION_TYPE = { type: TASK_ACTION; payload?: ITask | ITask[] };
+export const getSingleTask = createAction(
+  TASK_ACTION.GET_SINGLE_TASK,
+  (id) => ({
+    payload: id,
+  })
+);
 
 @Injectable()
 export class TodoServiceService {
@@ -47,4 +49,14 @@ export class TodoServiceService {
   deleteTask(id?: number): void {
     this.store.dispatch(deleteTask(id));
   }
+
+  getSingleTaskById(id: string): void {
+    this.store.dispatch(getSingleTask(id));
+  }
 }
+
+type Keys = keyof typeof TASK_ACTION;
+
+export type TASK_ACTION = (typeof TASK_ACTION)[Keys];
+
+export type TASK_ACTION_TYPE = { type: TASK_ACTION; payload?: ITask | ITask[] };

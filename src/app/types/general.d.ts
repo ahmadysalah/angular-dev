@@ -10,4 +10,5 @@ type T = any;
 interface TASK_STATE {
   loading: boolean;
   tasks: Array<ITask>;
+  task: ITask;
 }

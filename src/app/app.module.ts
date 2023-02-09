@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 import { TasksReducers } from './store/reducers';
 import { TodoServiceService } from './store/actions';
 import { HomeComponent } from './pages/home/home.component';
+import { TaskComponent } from './pages/task/task.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,13 @@ import { HomeComponent } from './pages/home/home.component';
     AddToDoFormComponent,
     ToDoTableComponent,
     HomeComponent,
+    TaskComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      tasks: TasksReducers,
+      tasks: TasksReducers as T,
     }),
     // FormsModule,
   ],

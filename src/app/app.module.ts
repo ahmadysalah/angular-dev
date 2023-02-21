@@ -1,3 +1,4 @@
+import { IconsModule } from './icons/icons.module';
 import { FormsModule } from '@angular/forms';
 import { TitlePipe } from './title.pipe';
 import { ApiServiceService } from './utils/api-service.service';
@@ -15,6 +16,7 @@ import { TasksReducers } from './store/reducers';
 import { TodoServiceService } from './store/actions';
 import { HomeComponent } from './pages/home/home.component';
 import { TaskComponent } from './pages/task/task.component';
+import { ToggleImageComponent } from './components/toggle-image/toggle-image.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { TaskComponent } from './pages/task/task.component';
     HomeComponent,
     TaskComponent,
     TitlePipe,
+    ToggleImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { TaskComponent } from './pages/task/task.component';
       tasks: TasksReducers as T,
     }),
     FormsModule,
+    IconsModule,
   ],
   bootstrap: [AppComponent],
   providers: [TodoServiceService, ApiServiceService],

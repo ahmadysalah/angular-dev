@@ -1,4 +1,5 @@
 import { FormsModule } from '@angular/forms';
+import { TitlePipe } from './title.pipe';
 import { ApiServiceService } from './utils/api-service.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,6 +25,7 @@ import { TaskComponent } from './pages/task/task.component';
     ToDoTableComponent,
     HomeComponent,
     TaskComponent,
+    TitlePipe,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { TaskComponent } from './pages/task/task.component';
     StoreModule.forRoot({
       tasks: TasksReducers as T,
     }),
-    // FormsModule,
+    FormsModule,
   ],
   bootstrap: [AppComponent],
   providers: [TodoServiceService, ApiServiceService],
